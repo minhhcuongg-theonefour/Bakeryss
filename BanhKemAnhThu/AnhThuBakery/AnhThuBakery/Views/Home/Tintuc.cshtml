@@ -1,0 +1,12 @@
+﻿@model AnhThuBakery.Models.TINTUC
+@{
+    ViewBag.Title = "Tintuc";
+    Layout = "~/Views/Shared/LayoutHome.cshtml";
+}
+
+<div id="content" class="pav-blog">
+    @Html.Raw(Model.NoiDung)
+    <div class="buttons">
+         <div class="left">Người Đăng: @Model.QUANTRI.TenDN</div><div class="right"><a href="@Url.Action("Index")" class="button">Tiếp tục</a></div>
+    </div>
+</div>

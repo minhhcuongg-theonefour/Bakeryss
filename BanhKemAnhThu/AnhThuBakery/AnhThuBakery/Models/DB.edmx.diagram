@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0b21863a52804d19892098ff01d13cd7" Name="Diagram1">
+        <EntityTypeShape EntityType="CSDLBanhKemModel.BANH" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSDLBanhKemModel.CHUDE" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSDLBanhKemModel.CTDH" Width="1.5" PointX="5.25" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSDLBanhKemModel.DONDH" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSDLBanhKemModel.HTTT" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSDLBanhKemModel.KHACHHANG" Width="1.5" PointX="0.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSDLBanhKemModel.KHUYENMAI" Width="1.5" PointX="5.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSDLBanhKemModel.LIENHE" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSDLBanhKemModel.LOAIBANH" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSDLBanhKemModel.NHOMQUANTRI" Width="1.5" PointX="7.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSDLBanhKemModel.QUANGCAO" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSDLBanhKemModel.QUANTRI" Width="1.5" PointX="10" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSDLBanhKemModel.sysdiagram" Width="1.5" PointX="9.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSDLBanhKemModel.TINTUC" Width="1.5" PointX="12.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="CSDLBanhKemModel.YKIEN" Width="1.5" PointX="5.25" PointY="8.375" IsExpanded="true" />
+        <AssociationConnector Association="CSDLBanhKemModel.FK_Banh_ChuDe" ManuallyRouted="false" />
+        <AssociationConnector Association="CSDLBanhKemModel.FK_BANH_LOAIBANH" ManuallyRouted="false" />
+        <AssociationConnector Association="CSDLBanhKemModel.FK_CTDH_BANH" ManuallyRouted="false" />
+        <AssociationConnector Association="CSDLBanhKemModel.FK_KHUYENMAI_BANH" ManuallyRouted="false" />
+        <AssociationConnector Association="CSDLBanhKemModel.FK_YKIEN_BANH" ManuallyRouted="false" />
+        <AssociationConnector Association="CSDLBanhKemModel.FK_CTDH_DONDH" ManuallyRouted="false" />
+        <AssociationConnector Association="CSDLBanhKemModel.FK_DonDatHang_KhachHang" ManuallyRouted="false" />
+        <AssociationConnector Association="CSDLBanhKemModel.FK_DONDH_HTTT" ManuallyRouted="false" />
+        <AssociationConnector Association="CSDLBanhKemModel.FK_QUANTRI_NHOMQUANTRI" ManuallyRouted="false" />
+        <AssociationConnector Association="CSDLBanhKemModel.FK_TINTUC_QUANTRI" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

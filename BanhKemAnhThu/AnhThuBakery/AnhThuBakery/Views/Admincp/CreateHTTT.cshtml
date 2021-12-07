@@ -1,0 +1,22 @@
+﻿@model AnhThuBakery.Models.HTTT
+@{
+
+}
+
+<div class="panel panel-primary" style="width: 300px; margin-top: 20px;">
+    <div class="panel-heading">
+        <h3 class="panel-title">Thêm mới Hình Thức Thanh Toán</h3>
+    </div>
+    <div class="panel-body">
+        @using (Html.BeginForm("CreateHTTT", "Admincp", FormMethod.Post))
+        {
+
+            <div class="form-group">
+                <label>Tên HTTT</label>
+                @Html.TextBoxFor(i=>i.TenHTTT, new { @class = "form-control", placeholder = "Tên HTTT" })@Html.ValidationMessageFor(i => i.TenHTTT)
+            </div>
+            <button type="submit" class="btn btn-success" style="float:right">Submit</button>
+        }
+
+    </div>
+</div>

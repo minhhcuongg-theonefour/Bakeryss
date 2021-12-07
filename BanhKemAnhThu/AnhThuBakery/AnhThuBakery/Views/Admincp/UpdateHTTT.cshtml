@@ -1,0 +1,23 @@
+﻿@model AnhThuBakery.Models.HTTT
+@{
+    ViewBag.title = "Sửa HTTT";
+}
+
+<div class="panel panel-primary" style="width: 300px; margin-top: 20px;">
+    <div class="panel-heading">
+        <h3 class="panel-title">@ViewBag.title</h3>
+    </div>
+    <div class="panel-body">
+        @using (Html.BeginForm("UpdateHTTT", "Admincp", FormMethod.Post))
+        {
+
+            <div class="form-group">
+                <label>Tên HTTT</label>
+                @Html.HiddenFor(i=>i.MaHTTT)
+                @Html.TextBoxFor(i => i.TenHTTT, new { @class = "form-control", placeholder = "Tên HTTT" })@Html.ValidationMessageFor(i => i.TenHTTT)
+            </div>
+            <button type="submit" class="btn btn-success" style="float:right">Submit</button>
+        }
+
+    </div>
+</div>

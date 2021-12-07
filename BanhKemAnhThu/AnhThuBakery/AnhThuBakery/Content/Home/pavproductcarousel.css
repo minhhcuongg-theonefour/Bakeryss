@@ -1,0 +1,57 @@
+.box-products {
+	position:relative;
+}
+.productcarousel .carousel-control{
+	z-index:10
+}
+
+.productcarousel .nav{
+	padding:0;
+	margin:0
+}
+.productcarousel .carousel-controls{
+	position:absolute;
+	top:-23px;
+	right:10px;
+	z-index:11;
+	width:32px;
+	height: 13px;
+}
+	.productcarousel .carousel-controls a.carousel-control{
+		height: 13px;
+		margin: 0;
+		width: 13px;
+		background-image:url(/image/default/carousel_control.png) ;
+		background-repeat: no-repeat;
+		background-color: transparent;
+		border: none;
+		border-radius:0;
+		opacity: 1;
+		display: block;
+		top: 0;
+		overflow:hidden;
+		text-indent: -9999em;
+	}
+	.productcarousel .carousel-controls a.left{
+		background-position: left top;
+		left: 0;
+	}.productcarousel .carousel-controls a.left:hover{
+		background-position: left bottom;
+	}
+	.productcarousel .carousel-controls a.right{
+		background-position: -18px top;
+		right: 0;
+	}
+	.productcarousel .carousel-controls a.right:hover{
+		background-position: -18px bottom;
+	}
+.productcarousel .tab-content, .producttabs .box-product{
+	overflow:inherit
+}
+.productcarousel .box-product{
+	padding-bottom:12px;
+}
+.productcarousel {overflow: hidden;}
+.productcarousel ul li{display:block;list-style:none;float:left;width:181px;height:226px;margin-bottom:50px;margin-right:38px;background:url(/image/bg-product1.jpg) no-repeat;padding:10px;position:relative;-moz-box-shadow:0px 0px 2px #eccd98;-webkit-box-shadow:0px 0px 2px #eccd98;box-shadow:0px 0px 2px #eccd98;border:3px solid #d7c395}
+.productcarousel ul li:hover{border:3px solid #957d65}
+.productcarousel ul li.last{margin-right:0}

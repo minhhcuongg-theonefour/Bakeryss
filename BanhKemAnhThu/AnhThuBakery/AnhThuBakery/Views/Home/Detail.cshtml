@@ -1,0 +1,152 @@
+﻿@model AnhThuBakery.Models.BANH
+@{
+    Layout = "~/Views/Shared/LayoutHome.cshtml";
+    List<AnhThuBakery.Models.BANH> banh = ViewBag.banh;
+}
+<style> 
+#image {
+    width: 210px;
+    height: 184px;
+    background: red;
+    -webkit-transition: width 2s, height 2s, -webkit-transform 2s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s, height 2s, transform 2s;
+}
+
+#image:hover {
+    width: 420px;
+    height: 368px;
+}
+</style>
+<div id="content">
+
+    <div class="product-info">
+        <div class="row-fluid">
+
+            <div class="bosszoomtoolbox">
+                <div class="span6">
+                    <div class="image">
+                        <div id="wrap" style="top:0px;z-index:9999;position:relative;">
+                            <a href="#" title="@Model.TenBanh" class="cloud-zoom" id="zoom1" rel="" style="position: relative; display: block;">
+                                <img src="@Model.HinhMinhHoa" title="@Model.TenBanh" alt="@Model.TenBanh" id="image" style="display: block;">
+
+                            </a>
+                        </div>
+
+                    </div>
+
+
+              
+                    <a href="#" title="@Model.TenBanh" class="colorbox cboxElement" rel="colorbox"></a>
+
+                </div>
+            </div>
+
+            <div class="span6">
+                <h2>@Model.TenBanh</h2>
+
+                <div class="description">
+                    <span>Chủ Đề:</span><b> @Model.CHUDE.TenChuDe</b><br>
+                    <span>Loại Bánh:</span><b> @Model.LOAIBANH.TenLoaiBanh</b><br>
+                    <span>Mô Tả:</span><b> @Html.Raw(Model.MoTa)</b><br>
+</div>
+                <div class="price">Giá:								@string.Format("{0:0,00}", Model.DonGia) VND						</div>
+
+                <div class="price-cart">
+
+                    <div>
+                       
+                                                 <input name="idbanh" type="hidden" value="@Model.MaBanh" />
+
+                        <div class="qty">
+                            Số lượng:          <input id="numbercard" class="form-control" data-val="true" data-val-required="The soluong field is required." name="soluong" type="number" value="1">
+                           
+                        </div>
+                        
+                        <input data-id="@Model.MaBanh"  type="submit" value="Mua ngay" id="button-cart" class="button">
+
+                        <!-- <span>&nbsp;&nbsp;&nbsp;&nbsp;</span> -->
+
+                    </div>
+                </div>
+                <div class="price-other">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="product-related">
+        <div class="box-heading"><h3> <span>Sản phẩm liên quan (@banh.Count())</span></h3></div>
+        <div class="box-product">
+            <div class="row-fluid">
+                @foreach (var i in banh)
+                {
+                     <div class="span4 product-block">
+                    <div class="image"><a href="/Home/Detail/@i.MaBanh"><img src="@i.HinhMinhHoa" title="@i.TenBanh" alt="@i.TenBanh"></a></div>
+
+                    <div class="name"><a href="/Home/Detail/@i.MaBanh">@i.TenBanh</a></div>
+                    <div class="group-item">
+                        <div class="price-cart">
+                            <div class="price">
+                                @string.Format("{0:0,00}",i.DonGia) VND
+                            </div>
+
+                            <div class="cart">
+                                <input data-id="@i.MaBanh" type="submit" class="button AddToCard" value="Mua Ngay">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                }
+                
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+
+
+
+<script type="text/javascript">
+    jQuery(document).on("click", "input#button-cart", function () {
+        var sl = jQuery("input#numbercard").val();
+        var id=jQuery(this).data("id");
+        jQuery.ajax({
+            url: '@Url.Action("AddToCard", "Home")',
+            type: 'POST',
+            dataType: 'Json',
+            data: { idBanh: id,sl:sl},
+            success: function (data) {
+                if (data.success == true) {
+                    jQuery("tbody#contentCard").html(data.str);
+                    jQuery("td#tongtien").html(data.tongtien);
+                    jQuery("span#cart-total").html(data.tongsl);
+                }
+                else {
+                    alert("Them Vao Gio Hang That Bai !");
+                }
+            },
+        });
+    });
+    jQuery(document).on("click", "input.AddToCard", function () {
+        var id = jQuery(this).data("id");
+        jQuery.ajax({
+            url: '@Url.Action("AddToCard", "Home")',
+            type: 'POST',
+            dataType: 'Json',
+            data: { idBanh: id },
+            success: function (data) {
+                if (data.success == true) {
+                    jQuery("tbody#contentCard").html(data.str);
+                    jQuery("td#tongtien").html(data.tongtien);
+                    jQuery("span#cart-total").html(data.tongsl);
+                }
+                else {
+                    alert("Them Vao Gio Hang That Bai !");
+                }
+            },
+        });
+    });
+</script>

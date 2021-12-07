@@ -1,0 +1,111 @@
+﻿@model List<AnhThuBakery.Models.GioHang>
+@{
+    Layout = "~/Views/Shared/LayoutHome.cshtml";
+    int count = 0;
+    if (Model != null)
+    {
+        count = Model.Count;
+    }
+    List<AnhThuBakery.Models.HTTT> httt = ViewBag.httt;
+}
+
+<div id="content">
+
+
+
+    <div class="checkout">
+
+
+            <div class="cart-info">
+                <table class="pav-shop-cart">
+                    <thead class="hidden-phone">
+                        <tr>
+                            <td class="remove"></td>
+                            <td class="name">Sản phẩm</td>
+                            <td class="price">Đơn Giá</td>
+
+
+                            <td class="quantity">Số lượng</td>
+                            <td class="total">Tổng cộng</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < count; i++)
+                        {
+                            <tr>
+                                <td class="remove"><a href="/Home/XoaGioHang/@Model[i].IdBanh">
+
+                                <img src="/image/remove.png" alt="Loại bỏ" title="Loại bỏ"></a>
+                                
+                                
+                                </td>
+                                <td class="name" data-label="Sản phẩm">
+                                    <div class="image-name">
+                                        <a href="#">
+                                        <img style="max-width:100px;" src="@Model[i].Hinh" alt="@Model[i].TenBanh" title="@Model[i].TenBanh">
+                                        </a>
+                                            
+                                        <a href="#">@Model[i].TenBanh</a>
+                                            <div>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td class="price" data-label="Đơn Giá">
+
+                                        @string.Format("{0:0,00}", Model[i].DonGia)
+                                    </td>
+                                    <td class="quantity" data-label="Số lượng">
+                                        @using (Html.BeginForm("CapNhatGioHang", "Home", FormMethod.Post))
+{
+
+                                            <input type="hidden" value="@Model[i].IdBanh" name="idbanh" />
+    <input style="width:50px;" class="form-control" data-val="true" data-val-required="The soluong field is required." name="soluong" type="number" value="@Model[i].Soluong">
+        <input type="submit" alt="Cập nhật" title="Cập nhật" value="Cập Nhật" />
+}
+                                    </td>
+                                    <td class="total" data-label="Tổng cộng">@string.Format("{0:0,00}", Model[i].Tongtien) VND</td>
+                                </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+
+
+
+        <div class="row-fluid">
+            <div class="span7">
+                <div class="buttons clearfix">
+                    @using (Html.BeginForm("ThanhToan", "Home", FormMethod.Post))
+                    {
+                        <div class="pull-right right"><input value="Thanh Toán" type="submit" class="button"></div>
+                        <div class="pull-right right">
+                            <select name="httt">
+                                @foreach (var i in httt)
+                                {
+                                    <option value="@i.MaHTTT">@i.TenHTTT</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="center pull-left"><a href="/Home/" class="button">Tiếp tục mua hàng</a></div>
+                    }
+
+                </div>
+            </div>
+            <div class="span5">
+                <div class="cart-total clearfix">
+                    <table id="total">
+                        <tbody>
+
+                            <tr>
+                                <td class="right"><b>Tổng cộng: </b></td>
+                                <td style="color:red;font-weight:bold" class="right pull-right">@string.Format("{0:0,00}", Model.Sum(m => m.Tongtien)) VND</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

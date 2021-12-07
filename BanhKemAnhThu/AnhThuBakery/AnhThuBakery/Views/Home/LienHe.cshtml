@@ -1,0 +1,192 @@
+﻿@model AnhThuBakery.Models.LIENHE
+@{
+    ViewBag.Title = "LienHe";
+    Layout = "~/Views/Shared/LayoutHome.cshtml";
+}
+
+<div id="content">
+   @using (Html.BeginForm("LienHe", "Home", FormMethod.Post))
+{
+    <h1>Liên hệ với chúng tôi</h1>
+ 
+        <h2>Thông tin của chúng tôi</h2>
+        <div class="contact-info">
+            <div class="content">
+                <div class="left">
+                    <div class="box">
+
+                        <div class="contact column">
+                            <h2>Anh Thư Bakery</h2>
+
+                            <p>168 Đống Đa, Hà Nội</p>
+
+                            <p>ĐT: 0865020238 </p>
+
+                            <p><a href="#" title="BakeryHN">Email: anhthu@bakery.com</a></p>
+                        </div>
+
+                    </div>		
+                </div>
+                <div class="right">
+                    <b>Điện thoại:</b><br>
+                    0865 020 238<br>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <h2>Thông tin của Bạn</h2>
+        <div class="content">
+           
+                 <b>Họ tên:</b><br>
+            @Html.TextBoxFor(i => i.HoTen, new { @class = "form-control", placeholder = "Họ Tên" })@Html.ValidationMessageFor(i => i.HoTen)
+            <br />
+            <br />
+            <b>Điện thoại:</b><br>
+            @Html.TextBoxFor(i => i.DienThoai, new { @class = "form-control", placeholder = "Điện Thoại" })@Html.ValidationMessageFor(i => i.DienThoai)
+            <br />
+            <br />
+            <b>E-Mail :</b><br>
+            @Html.TextBoxFor(i => i.Email, new { @class = "form-control", placeholder = "Email" })@Html.ValidationMessageFor(i => i.Email)
+            <br />
+            <br />
+            <b>Địa chỉ:</b><br>
+            @Html.TextBoxFor(i => i.Diachi, new { @class = "form-control", placeholder = "Địa Chỉ" })@Html.ValidationMessageFor(i => i.Diachi)
+            <br />
+            <br />
+            <b>Nội dung:</b><br>
+            @Html.TextAreaFor(i => i.NoiDung, new { @class = "form-control", placeholder = "Nội Dung",style="width:900px;height:150px;" })@Html.ValidationMessageFor(i => i.NoiDung)
+        </div>
+        <div class="buttons">
+            <div class="right"><input type="reset" value="Xoá" class="button"></div>
+            <div class="right"><input type="submit" value="Gởi Đi" class="button"></div>
+        </div>
+            }
+            
+</div>
+
+
+<head>
+
+    <title>Bản đồ Cửa hàng</title>
+    <style>
+        .wrap {
+            padding: 7px;
+            background: orange;
+            width: 600px;
+            margin: 2px 0;
+        }
+
+        #option {
+            height: 23px;
+            padding-top: 3px;
+        }
+    </style>
+
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script>
+
+
+        //============= ==================== ==================== ====================
+        //Tìm đường từ vị trí hiện tại đến vị trí của cửa hàng (vị trí đã định sẵn)
+        //============= ==================== ==================== ====================
+
+        //tạo mới 2 đối tượng DirectionsService để lấy dữ liệu bất đồng bộ (Ajax)
+        //và đối tượng DirectionsRenderer để gắn hiển thị đường đi
+        var directionsService = new google.maps.DirectionsService();
+        var directionsDisplay = new google.maps.DirectionsRenderer()
+        var map;
+
+        //Viết hàm chuẩn bị (Load_Map) map
+        //trong đó có đối tượng mapoption gồm điểm chính giữa bản đồ (lấy giá trị là vĩ độ và kinh độ)
+        //độ zoom của map, giá trị từ 0 mức nhìn bao quát nhất đến 21 nhìn chi tiết nhất
+        var marker
+        var Cua_Hang = new google.maps.LatLng(10.2466751, 105.644935);
+        function Load_Map() {
+            var mapOptions = {
+                center: Cua_Hang,
+                zoom: 15
+            };
+            //Tạo biến map với loại dữ liệu là map gắn vào div có id là map-canvas và option của map là hàm mapOptions phía trên
+            map = new google.maps.Map(document.getElementById("Ban_Do"), mapOptions);
+            //gắn chỉ đường vào map sau khi đã tính toán và sử lý đường đi
+            directionsDisplay.setMap(map);
+            //tạo một marker(điểm đánh dấu) cho vị trí cửa hàng của bạn
+            //vị trí tại biến toàn cục latlng
+            //gắn vào map có tên là map (bởi có thể có 2 map trong cùng 1 trang web)
+            //với title là cửa hàng của tôi, khi rê chuột lên điểm marker sẽ thấy tên cửa hàng
+            marker = new google.maps.Marker({
+                position: Cua_Hang,
+                map: map,
+                title: "Cửa hàng của tôi"
+            });
+        }
+        function Vi_Tri_Hien_Tai() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(success);
+            } else {
+                error('Trình duyệt không hỗ trợ lấy vị trí của bạn');
+            }
+        }
+
+        //nếu người dùng cho phép lấy địa điểm hiện tại
+        function success(position) {
+
+            //lấy giá trị hiện tại thông qua geolocation của HTML5
+            var diemhientai = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+            //điểm đến là điểm chọn từ danh sách option
+            var e = document.getElementById("option");
+            var diemden = e.options[e.selectedIndex].getAttribute("data-map");
+            //viết request để gửi đi với
+            //origin là điểm hiện tại đang đứng ()
+            //Phương pháp geolocation của HTML5 đôi khi trả về giá trị địa điểm hiện tại của bạn không chính xác
+            //Bởi:
+            //+ 6 tháng Google mới cập nhật 1 lần
+            //+ Tuỳ thuộc vào vị trí của bạn ở đường lớn hay trong hẻm nhỏ
+            //+ Độ mạnh, yếu của mạng internet
+
+            //destination là điểm đến, điểm đã chọn vĩ độ, kinh độ từ trước
+            //travelMode ở đây sử dụng là DRIVING (lái xe hơi), bạn có thể tuỳ chọn Walking,Bicycling,Transit
+            var request = {
+                origin: diemhientai,
+                destination: diemden,
+                travelMode: google.maps.TravelMode.WALKING,
+            };
+
+            //thực hiện tìm kiếm và hiển thị kết quả
+            directionsService.route(request, function (response, status) {
+                if (status == google.maps.DirectionsStatus.OK) {
+                    // Tính khoảng cách
+                    //khoảng cách chia 1000 để ra số km
+                    //.toFixed(1) làm tròn sau dấu , (phấy) 1 đơn vị
+                    var khoangcacnh = Number((response.routes[0].legs[0].distance.value / 1000).toFixed(1)) + "Km";
+
+                    // Tính thời gian
+                    //Thời gian chia 60 để ra số phút
+                    var thoigian = Number((response.routes[0].legs[0].duration.value / 60).toFixed(1)) + " phút";
+                    alert("Khoảng cách: " + khoangcacnh + "\nThời gian: " + thoigian);
+                    //nếu dữ liệu gửi đi được trả về với trạng thái Ok thì gắn vào directionsDisplay
+                    directionsDisplay.setDirections(response);
+                }
+            });
+        }//end funtion sucess
+
+        //khi trang web được load lên thì thực hiện hàm (Load_Map)
+        google.maps.event.addDomListener(window, 'load', Load_Map);
+    </script>
+</head>
+<body>
+    <div class="wrap" style="width:99%;">
+
+        <input type="submit" style="width:200px;" value="Lựa chọn cửa hàng bạn muốn" />
+        <select name="" id="option">
+
+
+            <option value="" data-map="Anh Thư Bakery 168, Đống Đa, Hà Nội">Anh Thư Bakery</option>
+
+        </select>
+        <input type="button" class="" name="" value="Tìm Đường" onclick='Vi_Tri_Hien_Tai()'>
+    </div>
+
+    <div style="width:100%;height:500px;" id="Ban_Do"></div>
+</body>
+

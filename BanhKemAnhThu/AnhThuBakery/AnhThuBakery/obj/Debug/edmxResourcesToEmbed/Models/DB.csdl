@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CSDLBanhKemModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="BANH">
+    <Key>
+      <PropertyRef Name="MaBanh" />
+    </Key>
+    <Property Name="MaBanh" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenBanh" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DonGia" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="HinhMinhHoa" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MaCD" Type="Int32" />
+    <Property Name="MaLoai" Type="Int32" />
+    <Property Name="SoLuongBan" Type="Int32" />
+    <NavigationProperty Name="CHUDE" Relationship="Self.FK_Banh_ChuDe" FromRole="BANH" ToRole="CHUDE" />
+    <NavigationProperty Name="LOAIBANH" Relationship="Self.FK_BANH_LOAIBANH" FromRole="BANH" ToRole="LOAIBANH" />
+    <NavigationProperty Name="CTDHs" Relationship="Self.FK_CTDH_BANH" FromRole="BANH" ToRole="CTDH" />
+    <NavigationProperty Name="KHUYENMAIs" Relationship="Self.FK_KHUYENMAI_BANH" FromRole="BANH" ToRole="KHUYENMAI" />
+    <NavigationProperty Name="YKIENs" Relationship="Self.FK_YKIEN_BANH" FromRole="BANH" ToRole="YKIEN" />
+  </EntityType>
+  <EntityType Name="CHUDE">
+    <Key>
+      <PropertyRef Name="MaCD" />
+    </Key>
+    <Property Name="MaCD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenChuDe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="BANHs" Relationship="Self.FK_Banh_ChuDe" FromRole="CHUDE" ToRole="BANH" />
+  </EntityType>
+  <EntityType Name="CTDH">
+    <Key>
+      <PropertyRef Name="MaBanh" />
+      <PropertyRef Name="MaDH" />
+    </Key>
+    <Property Name="MaBanh" Type="Int32" Nullable="false" />
+    <Property Name="MaDH" Type="Int32" Nullable="false" />
+    <Property Name="SoLuong" Type="Int32" />
+    <Property Name="DonGia" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="ThanhTien" Type="Decimal" Precision="20" Scale="2" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="BANH" Relationship="Self.FK_CTDH_BANH" FromRole="CTDH" ToRole="BANH" />
+    <NavigationProperty Name="DONDH" Relationship="Self.FK_CTDH_DONDH" FromRole="CTDH" ToRole="DONDH" />
+  </EntityType>
+  <EntityType Name="DONDH">
+    <Key>
+      <PropertyRef Name="MaDH" />
+    </Key>
+    <Property Name="MaDH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaKH" Type="Int32" />
+    <Property Name="NgayDH" Type="DateTime" Precision="0" />
+    <Property Name="TriGia" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DaGiao" Type="Boolean" />
+    <Property Name="NgayGiaoHang" Type="DateTime" Precision="0" />
+    <Property Name="MaHTTT" Type="Int32" />
+    <NavigationProperty Name="CTDHs" Relationship="Self.FK_CTDH_DONDH" FromRole="DONDH" ToRole="CTDH" />
+    <NavigationProperty Name="KHACHHANG" Relationship="Self.FK_DonDatHang_KhachHang" FromRole="DONDH" ToRole="KHACHHANG" />
+    <NavigationProperty Name="HTTT" Relationship="Self.FK_DONDH_HTTT" FromRole="DONDH" ToRole="HTTT" />
+  </EntityType>
+  <EntityType Name="HTTT">
+    <Key>
+      <PropertyRef Name="MaHTTT" />
+    </Key>
+    <Property Name="MaHTTT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenHTTT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DONDHs" Relationship="Self.FK_DONDH_HTTT" FromRole="HTTT" ToRole="DONDH" />
+  </EntityType>
+  <EntityType Name="KHACHHANG">
+    <Key>
+      <PropertyRef Name="MaKH" />
+    </Key>
+    <Property Name="MaKH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HoTenKH" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DienThoaiKH" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="TenDN" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="MatKhau" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+    <Property Name="GioiTinh" Type="Boolean" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="KHTT" Type="Boolean" />
+    <NavigationProperty Name="DONDHs" Relationship="Self.FK_DonDatHang_KhachHang" FromRole="KHACHHANG" ToRole="DONDH" />
+  </EntityType>
+  <EntityType Name="KHUYENMAI">
+    <Key>
+      <PropertyRef Name="MaKM" />
+    </Key>
+    <Property Name="MaKM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaBanh" Type="Int32" />
+    <Property Name="GiaGiam" Type="Int32" />
+    <NavigationProperty Name="BANH" Relationship="Self.FK_KHUYENMAI_BANH" FromRole="KHUYENMAI" ToRole="BANH" />
+  </EntityType>
+  <EntityType Name="LIENHE">
+    <Key>
+      <PropertyRef Name="MaLienHe" />
+    </Key>
+    <Property Name="MaLienHe" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HoTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DienThoai" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Diachi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="LOAIBANH">
+    <Key>
+      <PropertyRef Name="MaLoai" />
+    </Key>
+    <Property Name="MaLoai" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenLoaiBanh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="BANHs" Relationship="Self.FK_BANH_LOAIBANH" FromRole="LOAIBANH" ToRole="BANH" />
+  </EntityType>
+  <EntityType Name="NHOMQUANTRI">
+    <Key>
+      <PropertyRef Name="MaNhom" />
+    </Key>
+    <Property Name="MaNhom" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenNhom" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="QUANTRIs" Relationship="Self.FK_QUANTRI_NHOMQUANTRI" FromRole="NHOMQUANTRI" ToRole="QUANTRI" />
+  </EntityType>
+  <EntityType Name="QUANGCAO">
+    <Key>
+      <PropertyRef Name="STT" />
+    </Key>
+    <Property Name="STT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenCTY" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HinhMinhHoa" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Href" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="NgayBatDau" Type="DateTime" Precision="0" />
+    <Property Name="NgayKetThuc" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="QUANTRI">
+    <Key>
+      <PropertyRef Name="MaQT" />
+    </Key>
+    <Property Name="MaQT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TenDN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MatKhau" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MaNhom" Type="Int32" />
+    <NavigationProperty Name="NHOMQUANTRI" Relationship="Self.FK_QUANTRI_NHOMQUANTRI" FromRole="QUANTRI" ToRole="NHOMQUANTRI" />
+    <NavigationProperty Name="TINTUCs" Relationship="Self.FK_TINTUC_QUANTRI" FromRole="QUANTRI" ToRole="TINTUC" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TINTUC">
+    <Key>
+      <PropertyRef Name="MaTinTuc" />
+    </Key>
+    <Property Name="MaTinTuc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NgayDang" Type="DateTime" Precision="0" />
+    <Property Name="MaQT" Type="Int32" />
+    <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="QUANTRI" Relationship="Self.FK_TINTUC_QUANTRI" FromRole="TINTUC" ToRole="QUANTRI" />
+  </EntityType>
+  <EntityType Name="YKIEN">
+    <Key>
+      <PropertyRef Name="MaYKien" />
+      <PropertyRef Name="MaBanh" />
+    </Key>
+    <Property Name="MaYKien" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaBanh" Type="Int32" Nullable="false" />
+    <Property Name="HoTen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NgayYKien" Type="DateTime" Precision="0" />
+    <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Duyet" Type="Boolean" />
+    <NavigationProperty Name="BANH" Relationship="Self.FK_YKIEN_BANH" FromRole="YKIEN" ToRole="BANH" />
+  </EntityType>
+  <Association Name="FK_Banh_ChuDe">
+    <End Role="CHUDE" Type="Self.CHUDE" Multiplicity="0..1" />
+    <End Role="BANH" Type="Self.BANH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CHUDE">
+        <PropertyRef Name="MaCD" />
+      </Principal>
+      <Dependent Role="BANH">
+        <PropertyRef Name="MaCD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BANH_LOAIBANH">
+    <End Role="LOAIBANH" Type="Self.LOAIBANH" Multiplicity="0..1" />
+    <End Role="BANH" Type="Self.BANH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOAIBANH">
+        <PropertyRef Name="MaLoai" />
+      </Principal>
+      <Dependent Role="BANH">
+        <PropertyRef Name="MaLoai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTDH_BANH">
+    <End Role="BANH" Type="Self.BANH" Multiplicity="1" />
+    <End Role="CTDH" Type="Self.CTDH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BANH">
+        <PropertyRef Name="MaBanh" />
+      </Principal>
+      <Dependent Role="CTDH">
+        <PropertyRef Name="MaBanh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KHUYENMAI_BANH">
+    <End Role="BANH" Type="Self.BANH" Multiplicity="0..1" />
+    <End Role="KHUYENMAI" Type="Self.KHUYENMAI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BANH">
+        <PropertyRef Name="MaBanh" />
+      </Principal>
+      <Dependent Role="KHUYENMAI">
+        <PropertyRef Name="MaBanh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_YKIEN_BANH">
+    <End Role="BANH" Type="Self.BANH" Multiplicity="1" />
+    <End Role="YKIEN" Type="Self.YKIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BANH">
+        <PropertyRef Name="MaBanh" />
+      </Principal>
+      <Dependent Role="YKIEN">
+        <PropertyRef Name="MaBanh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CTDH_DONDH">
+    <End Role="DONDH" Type="Self.DONDH" Multiplicity="1" />
+    <End Role="CTDH" Type="Self.CTDH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DONDH">
+        <PropertyRef Name="MaDH" />
+      </Principal>
+      <Dependent Role="CTDH">
+        <PropertyRef Name="MaDH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DonDatHang_KhachHang">
+    <End Role="KHACHHANG" Type="Self.KHACHHANG" Multiplicity="0..1" />
+    <End Role="DONDH" Type="Self.DONDH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHACHHANG">
+        <PropertyRef Name="MaKH" />
+      </Principal>
+      <Dependent Role="DONDH">
+        <PropertyRef Name="MaKH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DONDH_HTTT">
+    <End Role="HTTT" Type="Self.HTTT" Multiplicity="0..1" />
+    <End Role="DONDH" Type="Self.DONDH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HTTT">
+        <PropertyRef Name="MaHTTT" />
+      </Principal>
+      <Dependent Role="DONDH">
+        <PropertyRef Name="MaHTTT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_QUANTRI_NHOMQUANTRI">
+    <End Role="NHOMQUANTRI" Type="Self.NHOMQUANTRI" Multiplicity="0..1" />
+    <End Role="QUANTRI" Type="Self.QUANTRI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHOMQUANTRI">
+        <PropertyRef Name="MaNhom" />
+      </Principal>
+      <Dependent Role="QUANTRI">
+        <PropertyRef Name="MaNhom" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TINTUC_QUANTRI">
+    <End Role="QUANTRI" Type="Self.QUANTRI" Multiplicity="0..1" />
+    <End Role="TINTUC" Type="Self.TINTUC" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QUANTRI">
+        <PropertyRef Name="MaQT" />
+      </Principal>
+      <Dependent Role="TINTUC">
+        <PropertyRef Name="MaQT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CSDLBanhKemEntities5" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BANHs" EntityType="Self.BANH" />
+    <EntitySet Name="CHUDEs" EntityType="Self.CHUDE" />
+    <EntitySet Name="CTDHs" EntityType="Self.CTDH" />
+    <EntitySet Name="DONDHs" EntityType="Self.DONDH" />
+    <EntitySet Name="HTTTs" EntityType="Self.HTTT" />
+    <EntitySet Name="KHACHHANGs" EntityType="Self.KHACHHANG" />
+    <EntitySet Name="KHUYENMAIs" EntityType="Self.KHUYENMAI" />
+    <EntitySet Name="LIENHEs" EntityType="Self.LIENHE" />
+    <EntitySet Name="LOAIBANHs" EntityType="Self.LOAIBANH" />
+    <EntitySet Name="NHOMQUANTRIs" EntityType="Self.NHOMQUANTRI" />
+    <EntitySet Name="QUANGCAOs" EntityType="Self.QUANGCAO" />
+    <EntitySet Name="QUANTRIs" EntityType="Self.QUANTRI" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="TINTUCs" EntityType="Self.TINTUC" />
+    <EntitySet Name="YKIENs" EntityType="Self.YKIEN" />
+    <AssociationSet Name="FK_Banh_ChuDe" Association="Self.FK_Banh_ChuDe">
+      <End Role="CHUDE" EntitySet="CHUDEs" />
+      <End Role="BANH" EntitySet="BANHs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BANH_LOAIBANH" Association="Self.FK_BANH_LOAIBANH">
+      <End Role="LOAIBANH" EntitySet="LOAIBANHs" />
+      <End Role="BANH" EntitySet="BANHs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTDH_BANH" Association="Self.FK_CTDH_BANH">
+      <End Role="BANH" EntitySet="BANHs" />
+      <End Role="CTDH" EntitySet="CTDHs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KHUYENMAI_BANH" Association="Self.FK_KHUYENMAI_BANH">
+      <End Role="BANH" EntitySet="BANHs" />
+      <End Role="KHUYENMAI" EntitySet="KHUYENMAIs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_YKIEN_BANH" Association="Self.FK_YKIEN_BANH">
+      <End Role="BANH" EntitySet="BANHs" />
+      <End Role="YKIEN" EntitySet="YKIENs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CTDH_DONDH" Association="Self.FK_CTDH_DONDH">
+      <End Role="DONDH" EntitySet="DONDHs" />
+      <End Role="CTDH" EntitySet="CTDHs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DonDatHang_KhachHang" Association="Self.FK_DonDatHang_KhachHang">
+      <End Role="KHACHHANG" EntitySet="KHACHHANGs" />
+      <End Role="DONDH" EntitySet="DONDHs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DONDH_HTTT" Association="Self.FK_DONDH_HTTT">
+      <End Role="HTTT" EntitySet="HTTTs" />
+      <End Role="DONDH" EntitySet="DONDHs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_QUANTRI_NHOMQUANTRI" Association="Self.FK_QUANTRI_NHOMQUANTRI">
+      <End Role="NHOMQUANTRI" EntitySet="NHOMQUANTRIs" />
+      <End Role="QUANTRI" EntitySet="QUANTRIs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TINTUC_QUANTRI" Association="Self.FK_TINTUC_QUANTRI">
+      <End Role="QUANTRI" EntitySet="QUANTRIs" />
+      <End Role="TINTUC" EntitySet="TINTUCs" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+   @Styles.Render("~/Content/frontendbootstrapcss")
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <!-- Loading Flat UI -->
+    @Styles.Render("~/frontend/flatuicss")
+ 
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>-->
+       @Scripts.Render("~/bundles/html5shivjs")
+
+</head>
+<body>
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../Home/Index">Home</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li>@Html.ActionLink("Quản Lý Chủ Đề", "ListChude", "admincp")</li>
+                    <li>@Html.ActionLink("Quản Lý Loại", "ListLoai", "admincp")</li>
+                    <li>@Html.ActionLink("Quản Lý Bánh", "ListBanh", "admincp")</li>
+                    <li>@Html.ActionLink("Quản Lý Khách Hàng", "ListKhachHang", "admincp")</li>
+                    <li>@Html.ActionLink("Quản Lý HTTT", "ListHTTT", "admincp")</li>
+                    <li>@Html.ActionLink("Quản Lý Kích Thước", "ListKichthuoc", "admincp")</li>
+                    <li>@Html.ActionLink("Quản Lý Khuyến Mãi", "ListKhuyenMai", "admincp")</li>
+                </ul>
+
+            </div><!-- /.navbar-collapse -->
+        </nav>
+
+        <div id="page-wrapper">
+            @RenderBody()
+            <script type="text/javascript">
+                $(document).on('click', '#LogOut', function (e) {
+                    $('#Off').submit();
+                })
+
+
+
+
+            </script>
+        </div><!-- /#page-wrapper -->
+    </div>
+
+
+
+
+
+
+
+</body>
+    <!-- Load JS here for greater good =============================-->
+@Scripts.Render("~/bundles/mainsitecorejs")
+
+<!-- jQuery with jQuery Easing, and jQuery Transit JS -->
+@Scripts.Render("~/bundles/layerslidereasingtransitjs")
+
+<!-- LayerSlider from Kreatura Media with Transitions -->
+@Scripts.Render("~/bundles/layersliderkreaturamediajs")
+
+@Scripts.Render("~/bundles/frontend/showbizjs")
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@RenderSection("scripts", required: false)
+</html>

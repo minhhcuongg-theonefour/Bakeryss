@@ -1,0 +1,29 @@
+﻿@model AnhThuBakery.Models.KHUYENMAI
+@{
+    List<AnhThuBakery.Models.BANH> loai = ViewBag.loai;
+}
+
+<div class="panel panel-primary" style="width: 300px; margin-top: 20px;">
+    <div class="panel-heading">
+        <h3 class="panel-title">Thêm mới giảm giá</h3>
+    </div>
+    <div class="panel-body">
+        @using (Html.BeginForm("CreateKhuyenMai", "Admincp", FormMethod.Post))
+        {
+            <div class="form-group">
+                <label>Bánh</label>
+                @Html.DropDownListFor(i => i.MaBanh, new SelectList(loai, "MaBanh", "TenBanh", loai.FirstOrDefault()))
+            </div>
+            <div class="form-group">
+                <label>Giá giảm</label>
+                <div class="form-group input-group">
+                    @Html.TextBoxFor(i => i.GiaGiam, new { @class = "form-control", placeholder = "Giá giảm", type = "number" })
+                    <span class="input-group-addon">VND</span>
+                    @Html.ValidationMessageFor(i => i.GiaGiam)
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success" style="float:right">Submit</button>
+        }
+
+    </div>
+</div>

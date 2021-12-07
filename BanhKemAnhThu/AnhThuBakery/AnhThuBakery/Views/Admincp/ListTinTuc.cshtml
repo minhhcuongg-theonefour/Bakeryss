@@ -1,0 +1,54 @@
+﻿@model List<AnhThuBakery.Models.TINTUC>
+@{
+    ViewBag.Title = "Quản Lý Tin Tức";
+}
+
+
+<div class="col-lg-12">
+    @{
+        if (TempData["title"] != null)
+        {
+            @Html.Partial("PartialThongBao", TempData["title"])
+        }
+
+    }
+</div>
+<div class="table-responsive" style="margin-top:20px;">
+    <a href="../Admincp/CreateTinTuc" class="btn btn-success" style="margin-bottom:10px">Thêm Mới Tin Tức</a>
+    <table id="datatable2" cellpadding="0" cellspacing="0" border="0" class="datatable table table-striped table-bordered table-hover dataTable" aria-describedby="datatable2_info">
+        <thead>
+            <tr>
+                <th class="header">Người Viết <i class="fa fa-sort"></i></th>
+                <th class="header">Ngày Đăng <i class="fa fa-sort"></i></th>
+                <th class="header">Nội Dung <i class="fa fa-sort"></i></th>
+                <th class="header">Sửa, Xóa <i class="fa fa-sort"></i></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var i in Model)
+            {
+                <tr>
+                    <td>@i.QUANTRI.TenDN (@i.MaTinTuc)</td>
+                    <td>@i.NgayDang</td>
+                    <td>@Html.Raw(i.NoiDung)</td>
+                    <td>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-info">Sửa, Xóa</button>
+                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="../Admincp/UpdateTinTuc?id=@i.MaTinTuc">Sửa</a></li>
+                                <li><a href="../Admincp/DeleteTinTuc?Id=@i.MaTinTuc">Xóa</a></li>
+                            </ul>
+                        </div>
+
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+
+
+
+

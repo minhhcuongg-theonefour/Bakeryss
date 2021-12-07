@@ -1,0 +1,61 @@
+﻿@{
+    List<AnhThuBakery.Models.CHUDE> chude = ViewBag.chude;
+    Layout="";
+    List<AnhThuBakery.Models.LOAIBANH> loai = ViewBag.loai;
+}
+<nav id="mainmenu" class="span9">
+    <div class="navbar">
+        <div class="navbar-inner">
+
+            <div class="nav-collapse collapse">
+                <ul class="nav megamenu">
+                    <li class="homepage">
+                        <a href="/Home"><span class="menu-title">Trang Chủ</span></a>
+                    </li>
+                    <li class="parent dropdown ">
+                        <a class="dropdown-toggle" href="#">
+                            <span class="menu-title">Chủ Đề</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu level1">
+                            @foreach (var i in chude)
+                            {
+                                <li class=" ">
+                                    <a href="/Home/LoaiChuDe/@i.MaCD/0">
+                                        <span class="menu-title">@i.TenChuDe</span>
+                                    </a>
+                                </li>
+                            }
+
+                        </ul>
+                    </li>
+                    <li class="parent dropdown ">
+                        <a class="dropdown-toggle" href="#">
+                            <span class="menu-title">Loại Bánh</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu level1">
+                            @foreach (var i in loai)
+                            {
+                                <li class=" ">
+                                    <a href="/Home/LoaiChuDe/0/@i.MaLoai">
+                                        <span class="menu-title">@i.TenLoaiBanh</span>
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a href="/Home/Tintuc/11"><span class="menu-title">Giới Thiệu</span></a>
+                    </li>
+                    <li class="">
+                        <a href="@Url.Action("ListTintuc","Home")"><span class="menu-title">Tin Tức</span></a>
+                    </li>
+                    <li class="">
+                        <a href="/Home/LienHe"><span class="menu-title">Liên Hệ</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>

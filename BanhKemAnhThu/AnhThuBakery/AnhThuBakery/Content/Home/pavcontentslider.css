@@ -1,0 +1,77 @@
+.pavcontentslider {
+	position:relative;
+	margin:0;float:left;width:690px;margin-right:15px;
+}
+.pavcontentslider .carousel-inner{
+	position:relative;
+}
+.pavcontentslider .banner-info{
+	color:#957d65;
+    line-height:22px;
+    padding:0;
+    position: absolute;
+    left:22px;
+    text-align:left;
+    top:32px;
+    width:245px;
+    z-index: 7;font-size:14px;
+}
+.banner-info span {
+	color:#c31a04;display:block;
+	text-transform:uppercase;
+	margin:0 0 3px;font:700 16px/24px Tahoma;
+}
+.banner-info h1{display:none}
+.banner-info a.bnt{
+	background:url("/image/bg-xemchitiet.png") no-repeat;
+	color:#efe0b6;
+	padding:0;font:700 16px/39px Tahoma;
+	display:block;width:145px;height:39px;text-align:center;
+	margin:15px 0 0px;
+	}
+.banner-info a.bnt:hover{}
+.pavcontentslider .carousel-control {
+   background-color: transparent;
+    background-image: url("/image/default/arrow-control.png");
+    border: medium none;
+    border-radius: 0 0 0 0;
+    bottom: 52px;
+    display: none;
+    height: 40px;
+    margin-top: 0;
+    opacity: 1;
+    overflow: hidden;
+    text-indent: -9999em;
+    top: inherit;
+    width: 23px;
+	z-index:25px;
+	}
+.pavcontentslider .carousel-control.left {
+	background-position: left top;
+	left:-19px;
+}
+.pavcontentslider .carousel-control.right {
+	background-position: right top;
+	right: -19px;
+}
+.pavcontentslider .carousel-indicators{
+	bottom:15px;top:auto;
+	left:24px;
+	width: 100%;
+	display:inline-block;
+	position:absolute;
+}
+.pavcontentslider .carousel-indicators li{display:block;float:left;z-index:20;
+	margin:0 10px 0 0px;background:url("/image/bg-liactive.png") no-repeat;width:13px;height:13px;
+}
+.pavcontentslider .carousel-indicators li.active{background-position: 100% 0}	
+.pavcontentslider  .thumb-indicators li {text-indent:0; 
+   display: block;
+    float: left;
+    height: auto;
+    margin: 10px 0 10px 8px;
+    padding: 0;
+    text-indent: 0;
+    width: auto;
+    z-index: 20;
+}

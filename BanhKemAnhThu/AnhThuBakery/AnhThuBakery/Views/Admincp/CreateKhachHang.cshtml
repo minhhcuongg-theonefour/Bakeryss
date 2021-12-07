@@ -1,0 +1,49 @@
+﻿@model AnhThuBakery.Models.KHACHHANG
+@{
+    ViewBag.Title = "CreateKhachHang";
+}
+
+<div class="panel panel-primary" style="max-width: 350px;; margin-top: 20px;">
+    <div class="panel-heading">
+        <h3 class="panel-title">Thêm Khách Hàng</h3>
+    </div>
+    <div class="panel-body">
+        @using (Html.BeginForm("CreateKhachHang", "Admincp", FormMethod.Post))
+        {
+             <div class="form-group">
+                @Html.TextBoxFor(i => i.HoTenKH, new { @class = "form-control", placeholder = "Họ Tên" })@Html.ValidationMessageFor(i => i.HoTenKH)
+            </div>
+             <div class="form-group">
+                @Html.TextBoxFor(i => i.DiaChi, new { @class = "form-control", placeholder = "Địa Chỉ" })@Html.ValidationMessageFor(i => i.DiaChi)
+            </div>
+             <div class="form-group">
+                @Html.TextBoxFor(i => i.DienThoaiKH, new { @class = "form-control", placeholder = "Điện Thoại", type = "number" })@Html.ValidationMessageFor(i => i.DienThoaiKH)
+            </div>
+             <div class="form-group">
+                @Html.TextBoxFor(i => i.NgaySinh, new { @class = "form-control", placeholder = "Ngày Sinh", type = "date" })@Html.ValidationMessageFor(i => i.NgaySinh)
+            </div>
+             <div class="form-group">
+                @Html.CheckBoxFor(i => i.GioiTinh, new { @class = "form-control" })
+                 <p class="help-block">Nếu là Nam thì check vào</p>
+            </div> 
+             <div class="form-group">
+                @Html.TextBoxFor(i => i.Email, new { @class = "form-control", placeholder = "Email", type = "email"})@Html.ValidationMessageFor(i => i.Email)
+            </div>
+             <div class="form-group">
+                @Html.TextBoxFor(i => i.TenDN, new { @class = "form-control", placeholder = "Tên Đăng Nhập" })@Html.ValidationMessageFor(i => i.TenDN)
+            </div>
+             <div class="form-group">
+                @Html.TextBoxFor(i => i.MatKhau, new { @class = "form-control", placeholder = "Mật Khẩu" })@Html.ValidationMessageFor(i => i.MatKhau)
+            </div>
+              <div class="form-group" style="float:right;">
+                  <button type="submit" class="btn btn-success">Thêm</button>
+                  <button type="reset" class="btn btn-warning">Xóa</button>
+            </div>
+            
+        }
+
+
+
+    </div>
+</div>
+

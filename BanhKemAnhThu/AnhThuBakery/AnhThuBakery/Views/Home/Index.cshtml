@@ -1,0 +1,79 @@
+﻿@model PagedList.IPagedList<AnhThuBakery.Models.BANH>
+@using PagedList.Mvc;
+@{
+    Layout = "~/Views/Shared/LayoutHome.cshtml";
+}
+@if (Model != null && Model.Count > 0)
+{
+    <div class="box-content">
+    <div class="productcarousel">
+        <ul class="tabproduct">
+            @for (int i = 0; i < Model.Count; i++)
+            {
+               
+                   
+                <li>
+                    <input name="idbanh" type="hidden" value="@Model[i].MaBanh" />
+                    <input name="soluong" type="hidden" value="1" />
+                    <div class="image">
+                        <a href="/Home/Detail/@Model[i].MaBanh">
+                            <img src="@Model[i].HinhMinhHoa" alt="@Model[i].TenBanh">
+                            <div class="bgbox">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="name"><a href="/Home/Detail/@Model[i].MaBanh">@Model[i].TenBanh</a></div>
+                    <div class="price">
+                        @string.Format("{0:0,00}", Model[i].DonGia) VND
+                    </div>
+                    <input data-id="@Model[i].MaBanh"  type="submit" class="button AddToCard" value="Mua Ngay">
+                </li>
+                
+            }
+
+
+        </ul>
+
+    </div>
+    <div class="pagination pagination-centered">
+        <div class="span12">
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+        </div>
+    </div>
+</div>
+}
+else
+{
+    <p><h1>Không Có Bánh Nào !</h1></p> 
+}
+    
+
+
+
+<script type="text/javascript">
+    jQuery('.timkiem').click(function () {
+        var t = jQuery('#searchval').val();
+        window.location = '/?page=2&search='+t;
+    });
+
+
+    jQuery(document).on("click", "input.AddToCard", function () {
+        var id = jQuery(this).data("id");
+        jQuery.ajax({
+            url: '@Url.Action("AddToCard", "Home")',
+            type: 'POST',
+            dataType: 'Json',
+            data: { idBanh: id},
+            success: function (data) {
+                if (data.success == true) {
+                    jQuery("tbody#contentCard").html(data.str);
+                    jQuery("td#tongtien").html(data.tongtien);
+                    jQuery("span#cart-total").html(data.tongsl);
+                }
+                else {
+                    alert("Them Vao Gio Hang That Bai !");
+                }
+            },
+        });
+    });
+</script>

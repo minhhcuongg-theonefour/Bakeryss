@@ -1,0 +1,22 @@
+﻿@model AnhThuBakery.Models.LOAIBANH
+@{
+
+}
+
+<div class="panel panel-primary" style="width: 300px; margin-top: 20px;">
+    <div class="panel-heading">
+        <h3 class="panel-title">@ViewBag.title</h3>
+    </div>
+    <div class="panel-body">
+        @using (Html.BeginForm("CreateLoai", "Admincp", FormMethod.Post))
+        {
+
+            <div class="form-group">
+                <label>Tên Loại Bánh</label>
+                @Html.TextBoxFor(i => i.TenLoaiBanh, new { @class = "form-control", placeholder = "Tên Loại Bánh" })@Html.ValidationMessageFor(i => i.TenLoaiBanh)
+            </div>
+            <button type="submit" class="btn btn-success" style="float:right">Submit</button>
+        }
+
+    </div>
+</div>

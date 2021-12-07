@@ -1,0 +1,96 @@
+﻿@model AnhThuBakery.Models.KHACHHANG
+@{
+    Layout = "~/Views/Shared/LayoutHome.cshtml";
+
+
+}
+
+
+<div class="row-fluid">
+    <div>
+        <div id="content">
+
+            <h1>Đăng Ký Tài Khoản</h1>
+            <p>Nếu bạn đã đăng ký tài khoản, vui lòng đăng nhập <a href="/Home/Dangnhap">Tại Đây</a>.</p><p> <b>Lưu ý:</b> Các mục dấu sao <b>màu đỏ</b> không được bỏ trống &amp; phải điền đầy đủ, chính xác</p>
+            @if (TempData["error"] != null)
+            {
+                <p><h1>Lỗi Không Thể Đăng Ký : @TempData["error"]</h1></p>
+            }
+            @using (Html.BeginForm("dangky", "Home", FormMethod.Post))
+            {
+                <h2>Thông tin cá nhân</h2>
+                <div class="content">
+                    <table class="form">
+                        <tbody>
+                            <tr>
+                                <td><span class="required">*</span> Tên:</td>
+                                <td>
+                                    @Html.TextBoxFor(i => i.HoTenKH, new { @class = "form-control", placeholder = "Họ Tên" })<br />@Html.ValidationMessageFor(i => i.HoTenKH)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="required">*</span> Địa Chỉ:</td>
+                                <td>
+                                    @Html.TextBoxFor(i => i.DiaChi, new { @class = "form-control", placeholder = "Địa chỉ" })<br />@Html.ValidationMessageFor(i => i.DiaChi)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="required">*</span> Điện Thoại:</td>
+                                <td>
+                                    @Html.TextBoxFor(i => i.DienThoaiKH, new { @class = "form-control", placeholder = "Điện thoại", type = "number" })<br />@Html.ValidationMessageFor(i => i.DienThoaiKH)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="required">*</span> Ngày Sinh:</td>
+                                <td>
+                                    @Html.TextBoxFor(i => i.NgaySinh, new { @class = "form-control", type = "date" })<br />
+                                    @Html.ValidationMessageFor(i => i.NgaySinh)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="required">*</span> Email:</td>
+                                <td>
+                                    @Html.TextBoxFor(i => i.Email, new { @class = "form-control", placeholder = "Email", type = "email" })<br />@Html.ValidationMessageFor(i => i.Email)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="required">*</span> Giới Tính:</td>
+                                <td>
+                                    @Html.CheckBoxFor(i => i.GioiTinh, new { @class = "form-control" }) Chọn Nếu Là Nam !
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="required">*</span> Tên đăng nhập:</td>
+                                <td>
+                                    @Html.TextBoxFor(i => i.TenDN, new { @class = "form-control", placeholder = "Tên đăng nhập" })<br />@Html.ValidationMessageFor(i => i.TenDN)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="required">*</span> Mật khẩu:</td>
+                                <td>
+                                    @Html.PasswordFor(i => i.MatKhau, new { @class = "form-control", })<br />@Html.ValidationMessageFor(i => i.MatKhau)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="required">*</span> Nhập Lại Mật khẩu:</td>
+                                <td>
+                                    <input type="password" name="repassword" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="buttons">
+                    <div class="right">
+                        Tôi đã đọc &amp; đồng ý với <a class="fancybox" href="#" alt="Quy định"><b>Quy định</b></a>						<input type="checkbox" name="agree" value="1">
+                        <input type="submit" value="Tiếp tục" class="button">
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+
+</div>

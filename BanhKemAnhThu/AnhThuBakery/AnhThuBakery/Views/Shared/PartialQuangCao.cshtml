@@ -1,0 +1,40 @@
+﻿@{
+    List<AnhThuBakery.Models.QUANGCAO> qc = ViewBag.quangcao;
+    Layout = "";
+}
+
+<div id="pavcontentslider9" class="carousel slide pavcontentslider">
+
+    <div class="carousel-inner">
+        @foreach (var i in qc)
+        {
+              <div class="item">
+            <a href="https://@i.Href"><img src="@i.HinhMinhHoa" alt="@i.TenCTY"></a>
+        </div>
+        }
+
+       
+
+    </div>
+
+    <a class="carousel-control left" href="#" data-slide="prev">‹</a>
+    <a class="carousel-control right" href="#" data-slide="next">›</a>
+
+
+    <ol class="carousel-indicators">
+        @for (int i = 0; i < qc.Count; i++)
+        {
+            if (i == 0)
+            {
+                <li data-target="#pavcontentslider9" data-slide-to="@i" class="active"></li>
+            }
+            else
+            {
+                <li data-target="#pavcontentslider9" data-slide-to="@i" class="active"></li>
+            }
+        }
+    </ol>
+
+
+
+</div>

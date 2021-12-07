@@ -1,0 +1,57 @@
+﻿@model AnhThuBakery.Models.KHACHHANG
+@{
+    Layout = "~/Views/Shared/LayoutHome.cshtml";
+}
+
+
+<div class="row-fluid">
+
+
+    <div>
+        <div id="content">
+         
+            <h1>Đăng nhập tài khoản</h1>
+            <div class="login-content">
+                <div class="row-fluid">
+                    <div class="span6">
+                        <div class="inner">
+                            <h2>Khách hàng mới</h2>
+                            <div class="content">
+                                <p><b>Đăng ký tài khoản</b></p>
+                                <p>Bằng cách tạo tài khoản bạn có thể mua sắm nhanh hơn, cập nhật tình trạng đơn hàng, theo dõi những đơn hàng đã đặt và đặc biệt là sẽ được hưởng nhiều chương trình ưu đãi của của công ty chúng tôi!</p>
+                                <a href="/Home/Dangky" class="button">Tiếp tục</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span6">
+                        <div class="inner">
+                            <h2>Khách hàng cũ</h2>
+                            @using (Html.BeginForm("dangnhap","Home",FormMethod.Post))
+                            { 
+                                @Html.HiddenFor(m=>m.MaKH)
+                                <div class="content">
+                                    <p>Tôi là khách hàng cũ</p>
+                                    <b>Tên đăng nhập:</b><br>
+                                    @Html.TextBoxFor(i => i.TenDN, new { @class = "form-control", placeholder = "Tên đăng nhập" })
+                                    <br />
+                                    @Html.ValidationMessageFor(i => i.TenDN)
+                                    <br>
+                                    <br>
+                                    <b>Mật khẩu:</b><br>
+                                    @Html.PasswordFor(i => i.MatKhau, new { @class = "form-control", })
+                                    <br />
+                                    @Html.ValidationMessageFor(i => i.MatKhau)
+                                    <br />
+                                    <input type="submit" value="Đăng nhập" class="button">
+                                    @*<a href="@Url.Action("Index","Admincp")" class="button">Đăng nhập vào Admin</a>*@
+                                </div>
+                                
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

@@ -1,0 +1,5 @@
+C:\Users\Hien-PC\Desktop\WebMVC\AnhThuBakery\AnhThuBakery\AnhThuBakery\bin\AnhThuBakery.dll.config
+C:\Users\Hien-PC\Desktop\WebMVC\AnhThuBakery\AnhThuBakery\AnhThuBakery\bin\AnhThuBakery.dll
+C:\Users\Hien-PC\Desktop\WebMVC\AnhThuBakery\AnhThuBakery\AnhThuBakery\bin\AnhThuBakery.pdb
+C:\Users\Hien-PC\Desktop\WebMVC\AnhThuBakery\AnhThuBakery\AnhThuBakery\obj\Release\AnhThuBakery.dll
+C:\Users\Hien-PC\Desktop\WebMVC\AnhThuBakery\AnhThuBakery\AnhThuBakery\obj\Release\AnhThuBakery.pdb

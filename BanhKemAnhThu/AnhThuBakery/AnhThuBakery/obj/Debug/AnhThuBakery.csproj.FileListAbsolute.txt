@@ -1,0 +1,66 @@
+E:\WEB\AnhThuBakery\AnhThuBakery\bin\AnhThuBakery.dll.config
+E:\WEB\AnhThuBakery\AnhThuBakery\bin\AnhThuBakery.dll
+E:\WEB\AnhThuBakery\AnhThuBakery\bin\AnhThuBakery.pdb
+E:\WEB\AnhThuBakery\AnhThuBakery\bin\PagedList.dll
+E:\WEB\AnhThuBakery\AnhThuBakery\bin\PagedList.Mvc.dll
+E:\WEB\AnhThuBakery\AnhThuBakery\bin\PagedList.xml
+E:\WEB\AnhThuBakery\AnhThuBakery\bin\PagedList.Mvc.xml
+E:\WEB\AnhThuBakery\AnhThuBakery\obj\Debug\AnhThuBakery.dll
+E:\WEB\AnhThuBakery\AnhThuBakery\obj\Debug\AnhThuBakery.pdb
+E:\WEB\AnhThuBakery\AnhThuBakery\obj\Debug\AnhThuBakery.csprojResolveAssemblyReference.cache
+C:\Users\AnhThu\Desktop\New folder\AnhThuBakery (2)\AnhThuBakery\AnhThuBakery\bin\AnhThuBakery.dll.config
+C:\Users\AnhThu\Desktop\New folder\AnhThuBakery (2)\AnhThuBakery\AnhThuBakery\bin\AnhThuBakery.dll
+C:\Users\AnhThu\Desktop\New folder\AnhThuBakery (2)\AnhThuBakery\AnhThuBakery\bin\AnhThuBakery.pdb
+C:\Users\AnhThu\Desktop\New folder\AnhThuBakery (2)\AnhThuBakery\AnhThuBakery\obj\Debug\AnhThuBakery.dll
+C:\Users\AnhThu\Desktop\New folder\AnhThuBakery (2)\AnhThuBakery\AnhThuBakery\obj\Debug\AnhThuBakery.pdb
+C:\Users\AnhThu\Desktop\New folder\AnhThuBakery (2)\AnhThuBakery\AnhThuBakery\obj\Debug\AnhThuBakery.csprojResolveAssemblyReference.cache
+D:\School\CD CNTT\Web Nang Cao\De Tai\New folder (2)\Source Code\AnhThuBakery\AnhThuBakery\bin\AnhThuBakery.dll
+D:\School\CD CNTT\Web Nang Cao\De Tai\New folder (2)\Source Code\AnhThuBakery\AnhThuBakery\bin\AnhThuBakery.pdb
+D:\School\CD CNTT\Web Nang Cao\De Tai\New folder (2)\Source Code\AnhThuBakery\AnhThuBakery\obj\Debug\AnhThuBakery.dll
+D:\School\CD CNTT\Web Nang Cao\De Tai\New folder (2)\Source Code\AnhThuBakery\AnhThuBakery\obj\Debug\AnhThuBakery.pdb
+D:\WebMVC\AnhThuBakery\AnhThuBakery\AnhThuBakery\bin\AnhThuBakery.dll.config
+D:\WebMVC\AnhThuBakery\AnhThuBakery\AnhThuBakery\bin\AnhThuBakery.dll
+D:\WebMVC\AnhThuBakery\AnhThuBakery\AnhThuBakery\bin\AnhThuBakery.pdb
+D:\WebMVC\AnhThuBakery\AnhThuBakery\AnhThuBakery\obj\Debug\AnhThuBakery.dll
+D:\WebMVC\AnhThuBakery\AnhThuBakery\AnhThuBakery\obj\Debug\AnhThuBakery.pdb
+C:\Users\Hien-PC\Desktop\WebMVC\AnhThuBakery\AnhThuBakery\AnhThuBakery\bin\AnhThuBakery.dll.config
+C:\Users\Hien-PC\Desktop\WebMVC\AnhThuBakery\AnhThuBakery\AnhThuBakery\bin\AnhThuBakery.dll
+C:\Users\Hien-PC\Desktop\WebMVC\AnhThuBakery\AnhThuBakery\AnhThuBakery\bin\AnhThuBakery.pdb
+C:\Users\Hien-PC\Desktop\WebMVC\AnhThuBakery\AnhThuBakery\AnhThuBakery\obj\Debug\AnhThuBakery.dll
+C:\Users\Hien-PC\Desktop\WebMVC\AnhThuBakery\AnhThuBakery\AnhThuBakery\obj\Debug\AnhThuBakery.pdb
+C:\Users\AnhThu\Desktop\AnhThuBakery_New\AnhThuBakery\AnhThuBakery\bin\AnhThuBakery.dll.config
+C:\Users\AnhThu\Desktop\AnhThuBakery_New\AnhThuBakery\AnhThuBakery\bin\AnhThuBakery.dll
+C:\Users\AnhThu\Desktop\AnhThuBakery_New\AnhThuBakery\AnhThuBakery\bin\AnhThuBakery.pdb
+C:\Users\AnhThu\Desktop\AnhThuBakery_New\AnhThuBakery\AnhThuBakery\obj\Debug\AnhThuBakery.dll
+C:\Users\AnhThu\Desktop\AnhThuBakery_New\AnhThuBakery\AnhThuBakery\obj\Debug\AnhThuBakery.pdb
+C:\Users\AnhThu\Desktop\AnhThuBakery_New\AnhThuBakery\AnhThuBakery\obj\Debug\AnhThuBakery.csprojResolveAssemblyReference.cache
+D:\hoang\hoc ky 8\Do An Tot Nghiep\Cua thay Phet\AnhThuBakery_New\AnhThuBakery\AnhThuBakery\bin\AnhThuBakery.dll.config
+D:\hoang\hoc ky 8\Do An Tot Nghiep\Cua thay Phet\AnhThuBakery_New\AnhThuBakery\AnhThuBakery\bin\AnhThuBakery.dll
+D:\hoang\hoc ky 8\Do An Tot Nghiep\Cua thay Phet\AnhThuBakery_New\AnhThuBakery\AnhThuBakery\bin\AnhThuBakery.pdb
+D:\hoang\hoc ky 8\Do An Tot Nghiep\Cua thay Phet\AnhThuBakery_New\AnhThuBakery\AnhThuBakery\obj\Debug\AnhThuBakery.csprojResolveAssemblyReference.cache
+D:\hoang\hoc ky 8\Do An Tot Nghiep\Cua thay Phet\AnhThuBakery_New\AnhThuBakery\AnhThuBakery\obj\Debug\AnhThuBakery.dll
+D:\hoang\hoc ky 8\Do An Tot Nghiep\Cua thay Phet\AnhThuBakery_New\AnhThuBakery\AnhThuBakery\obj\Debug\AnhThuBakery.pdb
+C:\Visual Studio 2019\CNTT Final\BanhKemAnhThu\AnhThuBakery\AnhThuBakery\bin\AnhThuBakery.dll.config
+C:\Visual Studio 2019\CNTT Final\BanhKemAnhThu\AnhThuBakery\AnhThuBakery\bin\AnhThuBakery.dll
+C:\Visual Studio 2019\CNTT Final\BanhKemAnhThu\AnhThuBakery\AnhThuBakery\bin\AnhThuBakery.pdb
+C:\Visual Studio 2019\CNTT Final\BanhKemAnhThu\AnhThuBakery\AnhThuBakery\obj\Debug\AnhThuBakery.csproj.AssemblyReference.cache
+C:\Visual Studio 2019\CNTT Final\BanhKemAnhThu\AnhThuBakery\AnhThuBakery\obj\Debug\AnhThuBakery.csproj.CoreCompileInputs.cache
+C:\Visual Studio 2019\CNTT Final\BanhKemAnhThu\AnhThuBakery\AnhThuBakery\obj\Debug\AnhThuBakery.csproj.CopyComplete
+C:\Visual Studio 2019\CNTT Final\BanhKemAnhThu\AnhThuBakery\AnhThuBakery\obj\Debug\AnhThuBakery.dll
+C:\Visual Studio 2019\CNTT Final\BanhKemAnhThu\AnhThuBakery\AnhThuBakery\obj\Debug\AnhThuBakery.pdb
+C:\Visual Studio 2019\CNTT Final\BanhKemAnhThu - Copy\AnhThuBakery\AnhThuBakery\bin\AnhThuBakery.dll.config
+C:\Visual Studio 2019\CNTT Final\BanhKemAnhThu - Copy\AnhThuBakery\AnhThuBakery\bin\AnhThuBakery.dll
+C:\Visual Studio 2019\CNTT Final\BanhKemAnhThu - Copy\AnhThuBakery\AnhThuBakery\bin\AnhThuBakery.pdb
+C:\Visual Studio 2019\CNTT Final\BanhKemAnhThu - Copy\AnhThuBakery\AnhThuBakery\obj\Debug\AnhThuBakery.csproj.AssemblyReference.cache
+C:\Visual Studio 2019\CNTT Final\BanhKemAnhThu - Copy\AnhThuBakery\AnhThuBakery\obj\Debug\AnhThuBakery.csproj.CoreCompileInputs.cache
+C:\Visual Studio 2019\CNTT Final\BanhKemAnhThu - Copy\AnhThuBakery\AnhThuBakery\obj\Debug\AnhThuBakery.csproj.CopyComplete
+C:\Visual Studio 2019\CNTT Final\BanhKemAnhThu - Copy\AnhThuBakery\AnhThuBakery\obj\Debug\AnhThuBakery.dll
+C:\Visual Studio 2019\CNTT Final\BanhKemAnhThu - Copy\AnhThuBakery\AnhThuBakery\obj\Debug\AnhThuBakery.pdb
+C:\Visual Studio 2019\CNTT Final\BanhKemAnhThu - Copy2\AnhThuBakery\AnhThuBakery\bin\AnhThuBakery.dll.config
+C:\Visual Studio 2019\CNTT Final\BanhKemAnhThu - Copy2\AnhThuBakery\AnhThuBakery\bin\AnhThuBakery.dll
+C:\Visual Studio 2019\CNTT Final\BanhKemAnhThu - Copy2\AnhThuBakery\AnhThuBakery\bin\AnhThuBakery.pdb
+C:\Visual Studio 2019\CNTT Final\BanhKemAnhThu - Copy2\AnhThuBakery\AnhThuBakery\obj\Debug\AnhThuBakery.csproj.AssemblyReference.cache
+C:\Visual Studio 2019\CNTT Final\BanhKemAnhThu - Copy2\AnhThuBakery\AnhThuBakery\obj\Debug\AnhThuBakery.csproj.CoreCompileInputs.cache
+C:\Visual Studio 2019\CNTT Final\BanhKemAnhThu - Copy2\AnhThuBakery\AnhThuBakery\obj\Debug\AnhThuBakery.csproj.CopyComplete
+C:\Visual Studio 2019\CNTT Final\BanhKemAnhThu - Copy2\AnhThuBakery\AnhThuBakery\obj\Debug\AnhThuBakery.dll
+C:\Visual Studio 2019\CNTT Final\BanhKemAnhThu - Copy2\AnhThuBakery\AnhThuBakery\obj\Debug\AnhThuBakery.pdb

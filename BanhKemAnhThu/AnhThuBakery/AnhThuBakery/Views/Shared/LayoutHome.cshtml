@@ -1,0 +1,839 @@
+﻿
+<!DOCTYPE html>
+<!-- saved from url=(0053)http://BakeryHN.com.vn/index.php?route=common/home -->
+<html dir="ltr" lang="vi">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- Mobile viewport optimized: h5bp.com/viewport -->
+    <meta name="viewport" content="width=device-width">
+    <meta charset="UTF-8">
+    <title>Anh Thư Bakery</title>
+    <!--<base href="http://BakeryHN.com.vn/">-->
+    <base href=".">
+    <meta name="description" content="Anh Thư Bakery">
+    <link href="http://BakeryHN.com.vn/image/data/cart.png" rel="icon">
+    <link rel="stylesheet" type="text/css" href="/Content/Home/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/Content/Home/stylesheet.css">
+    <style>
+    </style>
+    <link rel="stylesheet" type="text/css" href="/Content/Home/font.css">
+    <link href="/Content/Home/css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/Content/Home/pavproductcarousel.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/Content/Home/slideshow.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/Content/Home/pavcontentslider.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/Content/Home/carousel.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/Content/Home/pavmegamenu.css" media="screen">
+    <script id="facebook-jssdk" src="/Scripts/Home/all.js"></script>
+    <script type="text/javascript" async="" src="/Scripts/Home/ga.js"></script>
+    <script type="text/javascript" src="/Scripts/Home/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="/Scripts/Home/jquery-ui-1.8.16.custom.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/Scripts/Home/jquery-ui-1.8.16.custom.css">
+    <script type="text/javascript" src="/Scripts/Home/common.js"></script>
+    <script type="text/javascript" src="/Scripts/Home/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/Scripts/Home/tabs.js"></script>
+    <script type="text/javascript" src="/Scripts/Home/jquery.nivo.slider.pack.js"></script>
+    <script type="text/javascript" src="/Scripts/Home/jquery.jcarousel.min.js"></script>
+    <script type="text/javascript" src="/Scripts/Home/getwidthbrowser.js"></script>
+    <link rel="stylesheet" type="text/css" href="/Scripts/Home/bootstrap-responsive.css">
+    <link rel="stylesheet" type="text/css" href="/Scripts/Home/theme-responsive.css">
+    <script type="text/javascript" src="/Scripts/Home/buttons.js"></script>
+    <script type="text/javascript">stLight.options({ publisher: "6aad483d-00cc-4a39-aff6-bf29664f491b", doNotHash: false, doNotCopy: false, hashAddressBar: false });</script>
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-34241141-1']);
+        _gaq.push(['_setDomainName', 'BakeryHN.com.vn']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+    @Scripts.Render("~/bundles/jqueryval")
+    <style type="text/css">
+        .fb_hidden {
+            position: absolute;
+            top: -10000px;
+            z-index: 10001;
+        }
+
+        .fb_invisible {
+            display: none;
+        }
+
+        .fb_reset {
+            background: none;
+            border: 0;
+            border-spacing: 0;
+            color: #000;
+            cursor: auto;
+            direction: ltr;
+            font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+            font-size: 11px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            letter-spacing: normal;
+            line-height: 1;
+            margin: 0;
+            overflow: visible;
+            padding: 0;
+            text-align: left;
+            text-decoration: none;
+            text-indent: 0;
+            text-shadow: none;
+            text-transform: none;
+            visibility: visible;
+            white-space: normal;
+            word-spacing: normal;
+        }
+
+            .fb_reset > div {
+                overflow: hidden;
+            }
+
+        .fb_link img {
+            border: none;
+        }
+
+        .fb_dialog {
+            background: rgba(82, 82, 82, .7);
+            position: absolute;
+            top: -10000px;
+            z-index: 10001;
+        }
+
+        .fb_reset .fb_dialog_legacy {
+            overflow: visible;
+        }
+
+        .fb_dialog_advanced {
+            padding: 10px;
+            -moz-border-radius: 8px;
+            -webkit-border-radius: 8px;
+            border-radius: 8px;
+        }
+
+        .fb_dialog_content {
+            background: #fff;
+            color: #333;
+        }
+
+        .fb_dialog_close_icon {
+            background: url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;
+            _background-image: url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);
+            cursor: pointer;
+            display: block;
+            height: 15px;
+            position: absolute;
+            right: 18px;
+            top: 17px;
+            width: 15px;
+        }
+
+        .fb_dialog_mobile .fb_dialog_close_icon {
+            top: 5px;
+            left: 5px;
+            right: auto;
+        }
+
+        .fb_dialog_padding {
+            background-color: transparent;
+            position: absolute;
+            width: 1px;
+            z-index: -1;
+        }
+
+        .fb_dialog_close_icon:hover {
+            background: url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;
+            _background-image: url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);
+        }
+
+        .fb_dialog_close_icon:active {
+            background: url(http://static.ak.fbcdn.net/rsrc.php/v2/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;
+            _background-image: url(http://static.ak.fbcdn.net/rsrc.php/v2/yL/r/s816eWC-2sl.gif);
+        }
+
+        .fb_dialog_loader {
+            background-color: #f2f2f2;
+            border: 1px solid #606060;
+            font-size: 24px;
+            padding: 20px;
+        }
+
+        .fb_dialog_top_left, .fb_dialog_top_right, .fb_dialog_bottom_left, .fb_dialog_bottom_right {
+            height: 10px;
+            width: 10px;
+            overflow: hidden;
+            position: absolute;
+        }
+
+        .fb_dialog_top_left {
+            background: url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;
+            left: -10px;
+            top: -10px;
+        }
+
+        .fb_dialog_top_right {
+            background: url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;
+            right: -10px;
+            top: -10px;
+        }
+
+        .fb_dialog_bottom_left {
+            background: url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;
+            bottom: -10px;
+            left: -10px;
+        }
+
+        .fb_dialog_bottom_right {
+            background: url(http://static.ak.fbcdn.net/rsrc.php/v2/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;
+            right: -10px;
+            bottom: -10px;
+        }
+
+        .fb_dialog_vert_left, .fb_dialog_vert_right, .fb_dialog_horiz_top, .fb_dialog_horiz_bottom {
+            position: absolute;
+            background: #525252;
+            filter: alpha(opacity=70);
+            opacity: .7;
+        }
+
+        .fb_dialog_vert_left, .fb_dialog_vert_right {
+            width: 10px;
+            height: 100%;
+        }
+
+        .fb_dialog_vert_left {
+            margin-left: -10px;
+        }
+
+        .fb_dialog_vert_right {
+            right: 0;
+            margin-right: -10px;
+        }
+
+        .fb_dialog_horiz_top, .fb_dialog_horiz_bottom {
+            width: 100%;
+            height: 10px;
+        }
+
+        .fb_dialog_horiz_top {
+            margin-top: -10px;
+        }
+
+        .fb_dialog_horiz_bottom {
+            bottom: 0;
+            margin-bottom: -10px;
+        }
+
+        .fb_dialog_iframe {
+            line-height: 0;
+        }
+
+        .fb_dialog_content .dialog_title {
+            background: #6d84b4;
+            border: 1px solid #3b5998;
+            color: #fff;
+            font-size: 14px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+            .fb_dialog_content .dialog_title > span {
+                background: url(http://static.ak.fbcdn.net/rsrc.php/v2/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;
+                float: left;
+                padding: 5px 0 7px 26px;
+            }
+
+        body.fb_hidden {
+            -webkit-transform: none;
+            height: 100%;
+            margin: 0;
+            overflow: visible;
+            position: absolute;
+            top: -10000px;
+            left: 0;
+            width: 100%;
+        }
+
+        .fb_dialog.fb_dialog_mobile.loading {
+            background: url(http://static.ak.fbcdn.net/rsrc.php/v2/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;
+            min-height: 100%;
+            min-width: 100%;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            z-index: 10001;
+        }
+
+            .fb_dialog.fb_dialog_mobile.loading.centered {
+                max-height: 590px;
+                min-height: 590px;
+                max-width: 500px;
+                min-width: 500px;
+            }
+
+        #fb-root #fb_dialog_ipad_overlay {
+            background: rgba(0, 0, 0, .45);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            min-height: 100%;
+            z-index: 10000;
+        }
+
+            #fb-root #fb_dialog_ipad_overlay.hidden {
+                display: none;
+            }
+
+        .fb_dialog.fb_dialog_mobile.loading iframe {
+            visibility: hidden;
+        }
+
+        .fb_dialog_content .dialog_header {
+            -webkit-box-shadow: white 0 1px 1px -1px inset;
+            background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));
+            border-bottom: 1px solid;
+            border-color: #1d4088;
+            color: #fff;
+            font: 14px Helvetica, sans-serif;
+            font-weight: bold;
+            text-overflow: ellipsis;
+            text-shadow: rgba(0, 30, 84, .296875) 0 -1px 0;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+
+            .fb_dialog_content .dialog_header table {
+                -webkit-font-smoothing: subpixel-antialiased;
+                height: 43px;
+                width: 100%;
+            }
+
+            .fb_dialog_content .dialog_header td.header_left {
+                font-size: 12px;
+                padding-left: 5px;
+                vertical-align: middle;
+                width: 60px;
+            }
+
+            .fb_dialog_content .dialog_header td.header_right {
+                font-size: 12px;
+                padding-right: 5px;
+                vertical-align: middle;
+                width: 60px;
+            }
+
+        .fb_dialog_content .touchable_button {
+            background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));
+            border: 1px solid #29447e;
+            -webkit-background-clip: padding-box;
+            -webkit-border-radius: 3px;
+            -webkit-box-shadow: rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;
+            display: inline-block;
+            margin-top: 3px;
+            max-width: 85px;
+            line-height: 18px;
+            padding: 4px 12px;
+            position: relative;
+        }
+
+        .fb_dialog_content .dialog_header .touchable_button input {
+            border: none;
+            background: none;
+            color: #fff;
+            font: 12px Helvetica, sans-serif;
+            font-weight: bold;
+            margin: 2px -12px;
+            padding: 2px 6px 3px 6px;
+            text-shadow: rgba(0, 30, 84, .296875) 0 -1px 0;
+        }
+
+        .fb_dialog_content .dialog_header .header_center {
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 18px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .fb_dialog_content .dialog_content {
+            background: url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;
+            border: 1px solid #555;
+            border-bottom: 0;
+            border-top: 0;
+            height: 150px;
+        }
+
+        .fb_dialog_content .dialog_footer {
+            background: #f2f2f2;
+            border: 1px solid #555;
+            border-top-color: #ccc;
+            height: 40px;
+        }
+
+        #fb_dialog_loader_close {
+            float: left;
+        }
+
+        .fb_dialog.fb_dialog_mobile .fb_dialog_close_button {
+            text-shadow: rgba(0, 30, 84, .296875) 0 -1px 0;
+        }
+
+        .fb_dialog.fb_dialog_mobile .fb_dialog_close_icon {
+            visibility: hidden;
+        }
+
+        .fb_iframe_widget {
+            display: inline-block;
+            position: relative;
+        }
+
+            .fb_iframe_widget span {
+                display: inline-block;
+                position: relative;
+                text-align: justify;
+            }
+
+            .fb_iframe_widget iframe {
+                position: absolute;
+            }
+
+        .fb_iframe_widget_lift {
+            z-index: 1;
+        }
+
+        .fb_hide_iframes iframe {
+            position: relative;
+            left: -10000px;
+        }
+
+        .fb_iframe_widget_loader {
+            position: relative;
+            display: inline-block;
+        }
+
+        .fb_iframe_widget_fluid {
+            display: inline;
+        }
+
+            .fb_iframe_widget_fluid span {
+                width: 100%;
+            }
+
+        .fb_iframe_widget_loader iframe {
+            min-height: 32px;
+            z-index: 2;
+            zoom: 1;
+        }
+
+        .fb_iframe_widget_loader .FB_Loader {
+            background: url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;
+            height: 32px;
+            width: 32px;
+            margin-left: -16px;
+            position: absolute;
+            left: 50%;
+            z-index: 4;
+        }
+
+        .fb_connect_bar_container div, .fb_connect_bar_container span, .fb_connect_bar_container a, .fb_connect_bar_container img, .fb_connect_bar_container strong {
+            background: none;
+            border-spacing: 0;
+            border: 0;
+            direction: ltr;
+            font-style: normal;
+            font-variant: normal;
+            letter-spacing: normal;
+            line-height: 1;
+            margin: 0;
+            overflow: visible;
+            padding: 0;
+            text-align: left;
+            text-decoration: none;
+            text-indent: 0;
+            text-shadow: none;
+            text-transform: none;
+            visibility: visible;
+            white-space: normal;
+            word-spacing: normal;
+            vertical-align: baseline;
+        }
+
+        .fb_connect_bar_container {
+            position: fixed;
+            left: 0 !important;
+            right: 0 !important;
+            height: 42px !important;
+            padding: 0 25px !important;
+            margin: 0 !important;
+            vertical-align: middle !important;
+            border-bottom: 1px solid #333 !important;
+            background: #3b5998 !important;
+            z-index: 99999999 !important;
+            overflow: hidden !important;
+        }
+
+        .fb_connect_bar_container_ie6 {
+            position: absolute;
+            top: expression(document.compatMode=="CSS1Compat"? document.documentElement.scrollTop+"px":body.scrollTop+"px");
+        }
+
+        .fb_connect_bar {
+            position: relative;
+            margin: auto;
+            height: 100%;
+            width: 100%;
+            padding: 6px 0 0 0 !important;
+            background: none;
+            color: #fff !important;
+            font-family: "lucida grande", tahoma, verdana, arial, sans-serif !important;
+            font-size: 13px !important;
+            font-style: normal !important;
+            font-variant: normal !important;
+            font-weight: normal !important;
+            letter-spacing: normal !important;
+            line-height: 1 !important;
+            text-decoration: none !important;
+            text-indent: 0 !important;
+            text-shadow: none !important;
+            text-transform: none !important;
+            white-space: normal !important;
+            word-spacing: normal !important;
+        }
+
+            .fb_connect_bar a:hover {
+                color: #fff;
+            }
+
+            .fb_connect_bar .fb_profile img {
+                height: 30px;
+                width: 30px;
+                vertical-align: middle;
+                margin: 0 6px 5px 0;
+            }
+
+            .fb_connect_bar div a, .fb_connect_bar span, .fb_connect_bar span a {
+                color: #bac6da;
+                font-size: 11px;
+                text-decoration: none;
+            }
+
+            .fb_connect_bar .fb_buttons {
+                float: right;
+                margin-top: 7px;
+            }
+
+        .fbpluginrecommendationsbarleft, .fbpluginrecommendationsbarright {
+            position: fixed !important;
+            bottom: 0;
+            z-index: 999;
+        }
+
+        .fbpluginrecommendationsbarleft {
+            left: 10px;
+        }
+
+        .fbpluginrecommendationsbarright {
+            right: 10px;
+        }
+    </style>
+    <script type="text/javascript" src="/Content/Home/getAllAppDefault.esi"></script>
+    <script type="text/javascript" src="/Content/Home/checkOAuth.esi"></script>
+    <link rel="stylesheet" type="text/css" href="/Content/Home/buttons.5be48d105d7701b1bc41eccdea7af7f3.css">
+</head>
+<body class="fs12 page-home " onclick="if(stWidget.buttonClicked==false){stWidget.stopClosing=false;stWidget.openDuration=0;stWidget.stClose(100);}">
+    <section id="page-container">
+        <section id="wrapper">
+            <section id="header">
+                <div id="headertop">
+                    <div class="container">
+                        <div class="welcome">
+                            @if (Session["user"] == null)
+                            {
+                                <a href="/Home/dangnhap">Đăng Nhập</a> <a href="/Home/dangky">Đăng ký</a>
+                            }
+                            else
+                            {
+                                string t = Session["user"].ToString();
+                                <p style="color:red;">Xin chào: <a>@t</a>   <a href="@Url.Action("Dangxuat")">Đăng Xuất</a></p>
+
+                            }
+
+                        </div>
+
+
+                        <div class="hotline"><span>Hotline: 0865 020 238 (Ms Thư)</span></div>
+
+                        <div class="quicklink">
+                            <ul>
+                                <li><a href="/Home/Tintuc/21">Hỗ trợ trực tuyến</a></li>
+                                <li><a href="/Home/Tintuc/22">Câu hỏi thường gặp</a></li>
+                                <li><a href="/Home/Tintuc/23">Vận chuyển</a></li>
+                                <li><a href="/Home/Tintuc/24">Truyền thông</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="headerbottom">
+                    <div class="container">
+                        <div class="row-fluid">
+                            <div class="span2">
+                                <div id="logo"><a href="/Home"><img src="/Content/logo.png" title="Anh Thư Bakery" alt="Anh Thư Bakery"></a></div>
+
+                            </div>
+
+                            <div class="box">
+                                <div class="box-content">
+                                    <div class="giaohang block">
+                                        <span>Giao Hàng</span>
+                                        <p>Trên toàn quốc</p>
+                                    </div>
+
+                                    <div class="trahang block">
+                                        <span>Trả Hàng</span>
+
+                                        <p>Trong 10 ngày</p>
+                                    </div>
+
+                                    <div class="thanhtoan block">
+                                        <span>Thanh Toán</span>
+
+                                        <p>Nhanh và An toàn</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="header-right span7 offset3 pull-right ">
+                                @{
+                                    List<AnhThuBakery.Models.GioHang> giohang = (List<AnhThuBakery.Models.GioHang>)Session["giohang"];
+                                    int tt = 0;
+                                    if (giohang != null)
+                                    {
+                                        tt = giohang.Count;
+                                    }
+                                }
+                                @Html.Action("ViewCard", "Shared")
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="mainnav">
+                <div class="container">
+                    <div class="mainnav-inner">
+                        <div class="row-fluid">
+
+                            @Html.Action("PartialMenu", "Shared")
+
+
+
+                            <div id="search" class="span3">
+                                <div class="button-search"></div>
+                                <input id="searchval" type="text" name="search" placeholder="Tìm kiếm" value="">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="sys-notification"><div class="container"><div id="notification"></div></div></section>
+            <section id="slideshow" class="pav-slideshow">
+                <div class="container">
+                    @Html.Action("PartialQuangCao", "Shared")
+                    <script type="text/javascript">
+
+                        $('#pavcontentslider9').carousel({ interval: 2000 });
+
+                    </script>
+                    <div>
+                        <div class=" jcarousel-skin-tango">
+                            <div class="jcarousel-container jcarousel-container-vertical" style="position: relative; display: block;">
+                                <div class="jcarousel-clip jcarousel-clip-vertical" style="position: relative;">
+                                    <ul id="carousel0" class="jcarousel jcarousel-list jcarousel-list-vertical" style="overflow: hidden; position: relative; top: 0px; margin: 0px; padding: 0px; left: 0px; height: 445px;"> 
+                                        <li class="jcarousel-item jcarousel-item-vertical jcarousel-item-1 jcarousel-item-1-vertical" jcarouselindex="1" style="float: left; list-style: none; height: 88px;"><a href="#"><img src="/Content/23492766-267x88.jpg" width="267" height="88" alt="Bánh kem 8/3" title="Bánh kem 8/3"></a></li>
+                                        <li class="jcarousel-item jcarousel-item-vertical jcarousel-item-2 jcarousel-item-2-vertical" jcarouselindex="2" style="float: left; list-style: none; height: 88px;"><a href="#"><img src="/Content/Back TT-267x88.jpg" width="267" height="88" alt="Bakery" title="Bakery"></a></li>
+                           
+                                        <li class="jcarousel-item jcarousel-item-vertical jcarousel-item-3 jcarousel-item-3-vertical" jcarouselindex="3" style="float: left; list-style: none; height: 88px;"><a href="#"><img src="/Content/3-267x88.jpg" width="267" height="88" alt="Bánh kem 20/10" title="Bánh kem 20/10"></a></li>
+                                      @*<li class="jcarousel-item jcarousel-item-vertical jcarousel-item-4 jcarousel-item-4-vertical" jcarouselindex="4" style="float: left; list-style: none; height: 88px;"><a href="#"><img src="/Content/2-267x88.jpg" width="267" height="88" alt="Lế hộp trung thu 2013" title="Lế hộp trung thu"></a></li>*@
+                                        <li class="jcarousel-item jcarousel-item-vertical jcarousel-item-5 jcarousel-item-5-vertical" jcarouselindex="5" style="float: left; list-style: none; height: 88px;"><a href="#"><img src="/Content/1-267x88.jpg" width="267" height="88" alt="Lễ hộp quà tặng" title="Lễ hộp quà tặng"></a></li>
+                                    </ul>
+                                </div><div class="jcarousel-prev jcarousel-prev-vertical" style="display: block;"></div><div class="jcarousel-next jcarousel-next-vertical" style="display: block;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <script type="text/javascript">
+<!--
+                        $('#carousel0').jcarousel({
+                            vertical: true,
+                            visible: 3,
+                            wrap: 'circular',
+                            scroll: 1
+                        });
+                        //--></script>
+                </div>
+            </section>
+
+            <div class="pav-promotion" id="pav-promotion">
+                <div class="container">
+                    <div class="row-fluid">                       
+                    </div>
+                </div>
+
+            </div>
+            </div>
+            <div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tab-index="-1" src="/Content/8n77RrR4jg0.htm" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tab-index="-1" src="/Content/8n77RrR4jg0(1).htm" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+
+            <section id="columns">
+                <div class="container">
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <div id="content">
+                                <div class="content-top">
+
+                                    <div id="tab-10" style="display: block;">
+                                        <div class="box">
+                                            @RenderBody()
+                                        </div>
+                                    </div>
+
+                                    <script type="text/javascript">
+<!--
+                                        $('#tabproduct0 a').tabs();
+                                        //--></script>
+
+                                </div>
+                                <h1 style="display: none;">Anh Thư Bakery</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="footer">
+                <div class="footer-top">
+                    <div class="container">
+                        <div class="row-fluid">
+                            <div class="span12">
+                                <div class="blockfooter">
+                                    <ul>
+                                        <li><a href="#"><img alt="Le Hop cao cap" src="/Content/box1.png" title="Hop Qua Cao Cap"></a></li>
+                                        <li><a href="#"><img alt="Khach Hang Doanh Nghiep" src="/Content/box2.png" title="Khach Hang Doang Nghiep"></a></li>
+                                        <li><img alt="" src="/Content/banner33.jpg" style="width: 316px; height: 139px;">​</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-center">
+                    <div class="container">
+                        <div class="row-fluid">
+                            <div class="column span4">
+                                <div class="box">
+
+                                    <div class="contact column">
+                                        <h2>Anh Thư Bakery</h2>
+
+                                        <p>168 Đống Đa, Hà Nội</p>
+
+                                        <p>ĐT: 0865 020 238 </p>
+
+                                        <p><a href="#" title="BakeryHN">Email: anhthu@bakery.com.vn</a></p>
+                                    </div>
+
+                                </div>			<div class="box" style="margin-top:45px">				<a href="#" target="_blank">Thiết kế web</a> by <a href="#" target="_blank">Khang&Cuong.IT</a>			</div>
+                            </div>
+                            <div class="column span3">
+                                <div class="box">
+                                    <h3>Thông tin</h3>
+                                    <ul class="list">
+                                        <li><a href="/Home/TinTuc/13">Khuyến mãi</a></li>
+                                        <li><a href="/Home/TinTuc/11">Về chúng tôi</a></li>
+                                        <li><a href="/Home/TinTuc/12">Thông tin giao nhận</a></li>
+                                        <li><a href="/Home/TinTuc/19">Quy định</a></li>
+                                        <li><a href="/Home/TinTuc/14">Chính sách, điều kiện</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="column span3">
+                                <div class="box">
+                                    <h3>Chăm sóc khách hàng</h3>
+                                    <ul class="list">
+                                        <li><a href="/Home/LienHe">Liên hệ</a></li>
+                                        <li><a href="/Home/TinTuc/15">Trả hàng</a></li>
+                                        <li><a href="/Home/TinTuc/16">Sơ đồ trang</a></li>
+                                        <li><a href="/Home/TinTuc/17">Thương hiệu</a></li>
+                                        <li><a href="/Home/TinTuc/18">Phiếu quà tặng</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </section><div id="stcpDiv" style="position: absolute; top: -1999px; left: -1988px;">ShareThis Copy and Paste</div><div id="stwrapper" class="stwrapper" style="visibility: hidden; top: -999px; left: -999px;"><div class="stclose"></div><iframe allowtransparency="true" id="stLframe" class="stLframe" name="stLframe" frameborder="0" scrolling="no" width="353px" height="350px" src="/Content/index.e4f1bf1985fe1c40f007f1dceb22377d.htm" style="top: 0px; left: 0px;"></iframe></div>
+
+</body>
+
+</html>
+
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        //var t = jQuery(document).find('center');
+        //t.next().remove();
+        //t.next().next().remove();
+        //t.next().next().next().remove();
+        //t.next().next().next().next().remove();
+        //t.remove();
+
+
+        jQuery.ajax({
+            url: '@Url.Action("AddToCard", "Home")',
+            type: 'POST',
+            dataType: 'Json',
+            data: { idBanh: 0, sl: 0 },
+            success: function (data) {
+                if (data.success == true) {
+                    jQuery("tbody#contentCard").html(data.str);
+                    jQuery("td#tongtien").html(data.tongtien);
+                    jQuery("span#cart-total").html(data.tongsl);
+                }
+            },
+        });
+    });
+
+
+    jQuery(document).on("click", ".removegiohang", function () {
+        var item = jQuery(this);
+        var id = jQuery(this).attr("data-id");
+        jQuery.ajax({
+            url: '@Url.Action("RemoveToCard", "Home")',
+            type: 'POST',
+            dataType: 'Json',
+            data: { idBanh: id },
+            success: function (data) {
+                if (data.success == true) {
+                    item.parent().parent().remove();
+                    jQuery('#tongtien').html(data.tt);
+                    jQuery('#cart-total').html(data.sl);
+                }
+            },
+        });
+
+    });
+
+
+</script>
+
+<noscripts>

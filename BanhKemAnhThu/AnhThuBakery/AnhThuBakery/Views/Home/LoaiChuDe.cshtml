@@ -1,0 +1,41 @@
+﻿@model List<AnhThuBakery.Models.BANH>
+@{
+    Layout = "~/Views/Shared/LayoutHome.cshtml";
+}
+<div class="box-content">
+    <div class="productcarousel">
+        <ul class="tabproduct">
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                using (Html.BeginForm("AddGioHang", "Home", FormMethod.Post))
+                {
+                    @Html.HiddenFor(m => m[i].MaBanh)
+
+                    <li>
+                        <input name="idbanh" type="hidden" value="@Model[i].MaBanh" />
+                        <input name="soluong" type="hidden" value="1" />
+                        <div class="image">-
+                            <a href="/Home/Detail/@Model[i].MaBanh">
+                                <img src="@Model[i].HinhMinhHoa" alt="@Model[i].TenBanh">
+                                <div class="bgbox">
+
+                                </div>
+                            </a>
+                        </div>
+                        <div class="name"><a href="/Home/Detail/@Model[i].MaBanh">@Model[i].TenBanh</a></div>
+                        <div class="price">
+                            @string.Format("{0:0,00}", Model[i].DonGia) VND
+                        </div>
+                        <input type="submit" class="button" value="Mua Ngay">
+
+                    </li>
+                }
+            }
+
+
+        </ul>
+
+    </div>
+ 
+    </div>
+</div>

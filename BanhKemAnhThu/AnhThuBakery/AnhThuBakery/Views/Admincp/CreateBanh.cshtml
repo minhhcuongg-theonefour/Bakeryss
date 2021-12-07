@@ -1,0 +1,55 @@
+﻿@model AnhThuBakery.Models.BanhViewModel
+@{
+    ViewBag.Title = "CreateBanh";
+}
+
+<div class="panel panel-primary" style="width:800px;margin-top:20px;">
+    <div class="panel-heading">
+        <h3 class="panel-title">Thêm Mới Bánh</h3>
+    </div>
+    <div class="panel-body">
+        @using (Html.BeginForm("CreateBanh", "Admincp", FormMethod.Post))
+        {
+            <div class="form-group">
+                @Html.DropDownListFor(m => m.banhs.MaCD, Model.lstChude, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.DropDownListFor(m => m.banhs.MaLoai, Model.lstLoai, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.TextBoxFor(i => i.banhs.TenBanh, new { @class = "form-control", placeholder = "Tên Bánh" })@Html.ValidationMessageFor(i => i.banhs.TenBanh)
+            </div>
+          <div class="form-group">
+                <label>Mô Tả</label>
+                @Html.TextAreaFor(i => i.banhs.MoTa, new { @class = "form-control", placeholder = "Content", @id = "ckeContent" })
+            </div>
+            <div class="form-group">
+                @Html.TextBoxFor(i => i.banhs.HinhMinhHoa, new { @class = "form-control", placeholder = "Hình Minh Họa", id = "txtImages", style = "float:left;margin-right:20px;width:400px;" })
+                <input class="btn btn-success" id="btnImages" type="button" value="Chọn Hình" />
+            </div>
+            <div class="form-group input-group" style="max-width:300px;">
+                <span class="input-group-addon">$</span>
+                @Html.TextBoxFor(i => i.banhs.DonGia, new { @class = "form-control", placeholder = "Đơn Giá" })
+                <span class="input-group-addon">VND</span>
+                @Html.ValidationMessageFor(i => i.banhs.DonGia)
+              </div>
+            <div class="form-group">
+                @Html.TextBoxFor(i => i.banhs.SoLuongBan, new { @class = "form-control", placeholder = "Số Lượng Đã Bán" })@Html.ValidationMessageFor(i => i.banhs.SoLuongBan)
+            </div>
+            <div class="form-group" style="float:right;">
+                <button type="reset" class="btn btn-warning">Xóa</button>
+                <button type="submit" class="btn btn-success">Thêm</button>
+            </div>
+        }
+    </div>
+</div>
+
+
+
+<script src="../../ckeditor/ckeditor.js" type="text/javascript"></script>
+<script src="../../ckfinder/ckfinder.js" type="text/javascript"></script>
+@*Ckediter và Ckfinder*@
+<script type="text/javascript">
+    CKEDITOR.replace("ckeContent");
+</script>
+
